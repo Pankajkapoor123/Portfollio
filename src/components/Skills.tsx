@@ -31,7 +31,7 @@ const Skills = () => (
       {skillGroups.map((g, i) => {
         const { icon: Icon, tone, span, glow } = groupStyle[i % groupStyle.length];
         return (
-          <Reveal key={g.title} delay={(i % 3) * 80} className={span}>
+          <Reveal key={g.title} variant="scale" delay={(i % 3) * 80} className={span}>
             <div className={`card card-interactive group h-full overflow-hidden bg-gradient-to-br ${glow} via-card to-card p-6 md:p-7`}>
               <h3 className="flex items-center gap-3 text-lg font-semibold">
                 <span className={`icon-tile h-11 w-11 ${tone} group-hover:scale-110 group-hover:-rotate-6`}>

@@ -76,7 +76,7 @@ const Contact = () => {
       title="Have a role or a project in mind?"
       description="I'm open to new opportunities and full-stack .NET and Angular projects. Email is the fastest way to reach me."
     >
-      <Reveal>
+      <Reveal variant="scale">
         <div className="relative mb-5 overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-brand-violet to-brand-cyan bg-[length:200%_100%] p-8 text-white shadow-[0_30px_60px_-30px_hsl(var(--primary)/0.7)] [animation:gradient-pan_10s_ease-in-out_infinite] md:p-10">
           <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/15 blur-2xl" aria-hidden />
           <div className="pointer-events-none absolute -bottom-24 left-1/3 h-56 w-56 rounded-full bg-white/10 blur-2xl" aria-hidden />
@@ -97,7 +97,7 @@ const Contact = () => {
         </div>
       </Reveal>
       <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr]">
-        <Reveal>
+        <Reveal variant="left">
           <div className="card relative isolate flex h-full flex-col overflow-hidden p-6 md:p-8">
             <div className="blob -right-16 -top-16 -z-10 h-48 w-48 bg-primary/15" aria-hidden />
             <p className="label text-[11px]">Email</p>
@@ -150,7 +150,7 @@ const Contact = () => {
           </div>
         </Reveal>
 
-        <Reveal delay={80}>
+        <Reveal variant="right" delay={80}>
           <form onSubmit={handleSubmit} className="card relative space-y-5 overflow-hidden p-6 md:p-8" aria-label="Contact form">
             <span className="absolute inset-x-0 top-0 h-1 bg-brand-gradient" aria-hidden />
             <div className="grid gap-5 sm:grid-cols-2">

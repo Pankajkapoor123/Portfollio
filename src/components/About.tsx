@@ -49,7 +49,7 @@ const About = () => (
     title="A full-stack engineer who cares about correctness."
   >
     <div className="grid gap-12 lg:grid-cols-[1fr_340px] lg:gap-16">
-      <Reveal>
+      <Reveal variant="left">
         <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>
             I'm a <span className="font-medium text-foreground">.NET Full Stack Developer</span> building web applications and
@@ -69,7 +69,7 @@ const About = () => (
         </div>
       </Reveal>
 
-      <Reveal delay={100}>
+      <Reveal variant="right" delay={100}>
         <dl className="card relative divide-y divide-border overflow-hidden text-sm before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-brand-gradient before:content-['']">
           <div className="p-5">
             <dt className="label text-[11px]">Currently</dt>

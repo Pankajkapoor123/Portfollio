@@ -394,12 +394,64 @@
   .reveal {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--reveal-delay, 0ms);
   }
+  .reveal.reveal-left { transform: translateX(-56px); }
+  .reveal.reveal-right { transform: translateX(56px); }
+  .reveal.reveal-scale { transform: translateY(20px) scale(0.94); }
+  .reveal.reveal-blur { transform: translateY(16px); filter: blur(10px); }
   .reveal.is-visible {
     opacity: 1;
     transform: none;
+    filter: none;
+  }
+
+  /* Hero content lifts and fades as it scrolls away; --out (0 → 1) comes from useScrollOut */
+  /* Desktop only: on phones the block is taller than the screen and would fade while still being read */
+  @media (min-width: 1024px) {
+    .scroll-out {
+      transform: translate3d(0, calc(var(--out, 0) * -90px), 0) scale(calc(1 - var(--out, 0) * 0.05));
+      opacity: calc(1 - var(--out, 0) * 0.85);
+      will-change: transform, opacity;
+    }
+  }
+
+  /* Scroll-driven experience timeline; --progress (0 → 1) comes from <Experience /> */
+  .tl-fill {
+    transform: scaleY(var(--progress, 0));
+    transform-origin: top;
+  }
+  .tl-head {
+    top: calc(var(--progress, 0) * 100%);
+    /* fade in at the start and out again as it reaches the end of the line */
+    opacity: min(1, calc(var(--progress, 0) * 30), calc((1 - var(--progress, 0)) * 30));
+  }
+  .tl-dot {
+    @apply border-2 border-border bg-background transition-[background-color,border-color,box-shadow,transform] duration-500;
+  }
+  .tl-card {
+    @apply transition-[border-color,box-shadow,opacity,transform] duration-500;
+  }
+  .tl-link {
+    @apply bg-border transition-colors duration-500;
+  }
+  [data-node] .tl-card { opacity: 0.72; }
+  [data-node][data-active="true"] .tl-card {
+    opacity: 1;
+    @apply border-primary/35 shadow-[0_20px_45px_-28px_hsl(var(--primary)/0.65)];
+  }
+  [data-node][data-active="true"] .tl-dot {
+    @apply scale-110 border-primary bg-primary shadow-[0_0_0_5px_hsl(var(--primary)/0.18),0_0_18px_hsl(var(--primary)/0.7)];
+  }
+  [data-node][data-active="true"] .tl-icon {
+    @apply text-white;
+  }
+  [data-node][data-active="true"] .tl-link {
+    @apply bg-primary/60;
   }
 
   /* Children that pop in one after another once their <Reveal> is visible; set --i per child */
@@ -467,7 +519,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal .stagger-item { opacity: 1; transform: none; transition: none; animation: none; }
+  .reveal, .reveal[class*="reveal-"], .reveal .stagger-item { opacity: 1; transform: none; filter: none; transition: none; animation: none; }
+  .scroll-out { transform: none; opacity: 1; }
+  [data-node] .tl-card { opacity: 1; }
   .reveal .grow-bar { width: 3.5rem; transition: none; }
   .reveal .draw-line { transform: none; transition: none; }
   .text-gradient, .blob, .aurora, .marquee-track, .glow-frame::before { animation: none; }

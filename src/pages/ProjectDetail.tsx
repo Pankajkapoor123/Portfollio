@@ -7,12 +7,26 @@ import Reveal from "@/components/Reveal";
 import { TechChip } from "@/components/Projects";
 import { projects, type Project } from "@/data/projects";
 import { toneFor } from "@/lib/tones";
+import { useParallax } from "@/lib/scrollFx";
 import NotFound from "@/pages/NotFound";
 
 const DEFAULT_TITLE = "Pankaj Kumar — .NET Full Stack Developer";
 
 // Old links keep working after a project was renamed
 const aliases: Record<string, string> = { navita: "navitra" };
+
+/** Header photo that sinks slower than the page as you scroll into the case study. */
+const HeaderPhoto = ({ src }: { src: string }) => {
+  const ref = useParallax<HTMLImageElement>({ speed: -0.3 });
+  return (
+    <img
+      ref={ref}
+      src={src}
+      alt=""
+      className="absolute inset-x-0 -top-[10%] h-[120%] w-full animate-fade-in object-cover opacity-60 [mask-image:linear-gradient(to_right,transparent_40%,black_85%)]"
+    />
+  );
+};
 
 const tocFor = (p: Project) =>
   [
@@ -76,7 +90,7 @@ const ProjectDetail = () => {
         <header className="relative overflow-hidden border-b border-border pb-14 pt-28 md:pt-36">
           {project.image && (
             <div className="pointer-events-none absolute inset-0" aria-hidden>
-              <img src={project.image} alt="" className="h-full w-full animate-fade-in object-cover opacity-60 [mask-image:linear-gradient(to_right,transparent_40%,black_85%)]" />
+              <HeaderPhoto src={project.image} />
               <div className="absolute inset-0 bg-gradient-to-r from-background from-30% via-background/95 to-background/50" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
             </div>
@@ -221,7 +235,7 @@ const ProjectDetail = () => {
               </Reveal>
               <div className="grid gap-4 md:grid-cols-2">
                 {project.modules.map((m, i) => (
-                  <Reveal key={m.title} delay={(i % 2) * 60}>
+                  <Reveal key={m.title} variant="scale" delay={(i % 2) * 60}>
                     <article className="card card-interactive group h-full p-6">
                       <h3 className="flex items-center gap-3 font-semibold">
                         <span className={`h-2 w-2 shrink-0 rounded-full ${tone.dot} transition-transform group-hover:scale-150`} aria-hidden />

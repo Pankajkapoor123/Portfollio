@@ -1,13 +1,17 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
+export type RevealVariant = "up" | "left" | "right" | "scale" | "blur";
+
 interface RevealProps {
   children: ReactNode;
   delay?: number;
   className?: string;
+  /** Direction the content enters from. */
+  variant?: RevealVariant;
 }
 
 /** Fades children in once they scroll into view. */
-const Reveal = ({ children, delay = 0, className = "" }: RevealProps) => {
+const Reveal = ({ children, delay = 0, className = "", variant = "up" }: RevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -33,7 +37,7 @@ const Reveal = ({ children, delay = 0, className = "" }: RevealProps) => {
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      className={`reveal ${variant === "up" ? "" : `reveal-${variant}`} ${visible ? "is-visible" : ""} ${className}`}
       style={delay ? { ["--reveal-delay" as string]: `${delay}ms` } : undefined}
     >
       {children}

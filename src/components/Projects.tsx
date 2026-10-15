@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import TiltCard from "@/components/TiltCard";
 import { projects, type Project } from "@/data/projects";
 import { toneFor } from "@/lib/tones";
+import { useParallax } from "@/lib/scrollFx";
 
 export const TechChip = ({ children }: { children: string }) => <span className="chip">{children}</span>;
 
@@ -22,6 +23,8 @@ const TechList = ({ tech, max = tech.length }: { tech: string[]; max?: number })
 /** Large cover that tilts towards the mouse; featured projects get a rotating light frame. */
 const Showcase = ({ project }: { project: Project }) => {
   const tone = toneFor(project.slug);
+  // The photo drifts inside its frame, giving the cover some depth while scrolling
+  const photo = useParallax<HTMLImageElement>({ speed: -0.09, limit: 0.09 });
   return (
     <Link
       to={`/projects/${project.slug}`}
@@ -31,14 +34,15 @@ const Showcase = ({ project }: { project: Project }) => {
       <TiltCard max={6}>
         <div className={project.featured ? "glow-frame rounded-2xl" : "rounded-2xl"}>
           <div className="relative overflow-hidden rounded-2xl border border-border bg-muted shadow-[0_30px_60px_-30px_hsl(var(--primary)/0.45)]">
-            <div className="aspect-video">
+            <div className="relative aspect-video overflow-hidden">
               {project.image && (
                 <img
+                  ref={photo}
                   src={project.image}
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
               )}
             </div>
@@ -63,11 +67,11 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
     <article
       className={`grid items-center gap-8 lg:gap-14 ${flip ? "lg:grid-cols-[1fr_1.1fr]" : "lg:grid-cols-[1.1fr_1fr]"}`}
     >
-      <Reveal className={flip ? "lg:order-2" : ""}>
+      <Reveal variant={flip ? "right" : "left"} className={flip ? "lg:order-2" : ""}>
         <Showcase project={project} />
       </Reveal>
 
-      <Reveal delay={120}>
+      <Reveal variant="blur" delay={120}>
         <div>
           <p className="flex items-center gap-2.5">
             <span className={`icon-tile h-9 w-9 ${tone.tile}`}>

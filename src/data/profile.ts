@@ -21,6 +21,7 @@ export const sections = [
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
+  { id: "services", label: "Services" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -47,7 +48,7 @@ export type Experience = {
   location: string;
   current?: boolean;
   summary: string;
-  highlights: { text: string; project?: string }[];
+  highlights: { title: string; text: string; project?: string }[];
   stack: string[];
 };
 
@@ -62,25 +63,31 @@ export const experience: Experience[] = [
       "Building enterprise healthcare, inventory, logistics and document-management systems end to end — API design, business logic, data modelling and integration with Angular and mobile clients.",
     highlights: [
       {
+        title: "Hospital Management System",
         text: "Built the HIMS backend (.NET Core + Angular) covering patient records, prescriptions, admissions and billing; contributed to ABHA M1/M2/M3 modules for health-data interoperability.",
         project: "hims",
       },
       {
+        title: "Responsive Angular frontends",
         text: "Built responsive Angular frontends for HIMS and Authentiko: reusable components, reactive forms with validation, route guards, and HTTP interceptors for JWT auth, integrated with the .NET APIs through RxJS.",
       },
       {
+        title: "SNEVVA medical report analysis",
         text: "Designed the SNEVVA report-processing pipeline: PDF/OCR extraction, knowledge-base matching, reference-range validation and AI fallback for uncertain values, on AWS S3, CloudFront and SQS.",
         project: "snevva",
       },
       {
+        title: "Navitra school transport",
         text: "Delivered the complete backend for Navitra, a school transport platform, serving both web and mobile clients from one ASP.NET Core Web API.",
         project: "navitra",
       },
       {
+        title: "MIMS, built solo end to end",
         text: "Built MIMS solo, end to end, on ASP.NET Core MVC and SQL Server — models, views, controllers and database — with multi-level approvals and low-stock alerts, replacing manual inventory paperwork.",
         project: "mims",
       },
       {
+        title: "Authentiko document platform",
         text: "Built Authentiko: secure document storage on S3, SFTP-based bank file workflows and shipment tracking.",
         project: "authentiko",
       },
@@ -96,10 +103,11 @@ export const experience: Experience[] = [
       "Full-stack training on ASP.NET Core MVC, Entity Framework and Angular, applied by building an e-commerce platform.",
     highlights: [
       {
+        title: "E-commerce platform",
         text: "Built an e-commerce platform with ASP.NET Core MVC and Entity Framework, including authentication, order management and payment gateway integration.",
         project: "ecommerce",
       },
-      { text: "Optimized database queries to cut page load times and server load." },
+      { title: "Query optimisation", text: "Optimized database queries to cut page load times and server load." },
     ],
     stack: ["ASP.NET Core MVC", "Entity Framework", "SQL Server"],
   },

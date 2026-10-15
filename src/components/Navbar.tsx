@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronRight, Command, Menu, Search, X } from "lucide-react";
+import { ArrowRight, ChevronRight, Command, Download, Menu, Search, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useCommandMenu } from "@/components/CommandMenu";
 import { profile, sections } from "@/data/profile";
@@ -115,6 +115,14 @@ const Navbar = () => {
             <Search className="h-4 w-4" />
           </button>
           <ThemeToggle />
+          <Link
+            to="/#contact"
+            onClick={(e) => handleSectionClick(e, "contact")}
+            className="btn btn-primary group ml-1 hidden h-9 px-4 sm:inline-flex"
+          >
+            Hire me
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </Link>
           <button
             type="button"
             className="btn btn-ghost h-9 w-9 px-0 md:hidden"
@@ -145,6 +153,18 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            <li className="flex gap-2 py-3">
+              <Link
+                to="/#contact"
+                onClick={(e) => handleSectionClick(e, "contact")}
+                className="btn btn-primary h-10 flex-1"
+              >
+                Hire me
+              </Link>
+              <a href={profile.resume} download className="btn btn-outline h-10 flex-1">
+                <Download className="h-4 w-4" /> CV
+              </a>
+            </li>
           </ul>
         </div>
       )}
