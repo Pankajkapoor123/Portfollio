@@ -7,37 +7,37 @@ const focus = [
   {
     icon: Braces,
     title: "API design",
-    tone: "bg-blue-500/10 text-blue-600 ring-blue-500/20 dark:text-blue-400",
+    tone: "bg-secondary text-foreground ring-border",
     text: "RESTful ASP.NET Core APIs with request validation, centralized error handling, JWT auth and role-based access.",
   },
   {
     icon: LayoutTemplate,
     title: "Angular frontends",
-    tone: "bg-red-500/10 text-red-600 ring-red-500/20 dark:text-red-400",
+    tone: "bg-secondary text-foreground ring-border",
     text: "Reusable components and services, reactive forms with validation, routing with lazy loading and guards, and HTTP interceptors for JWT auth — all wired to the APIs with RxJS.",
   },
   {
     icon: MonitorSmartphone,
     title: "Responsive design",
-    tone: "bg-amber-500/10 text-amber-600 ring-amber-500/20 dark:text-amber-400",
+    tone: "bg-secondary text-foreground ring-border",
     text: "Mobile-first layouts with Flexbox and CSS Grid that work on phones, tablets and desktops, with clean, accessible forms, tables and dashboards.",
   },
   {
     icon: Database,
     title: "Data modelling",
-    tone: "bg-cyan-500/10 text-cyan-600 ring-cyan-500/20 dark:text-cyan-400",
+    tone: "bg-secondary text-foreground ring-border",
     text: "Relational schemas on PostgreSQL and SQL Server with EF Core, plus query tuning where load times matter.",
   },
   {
     icon: HeartPulse,
     title: "Healthcare workflows",
-    tone: "bg-rose-500/10 text-rose-600 ring-rose-500/20 dark:text-rose-400",
+    tone: "bg-secondary text-foreground ring-border",
     text: "Patient lifecycle, billing and ABHA M1–M3 integrations, where record consistency and access control are non-negotiable.",
   },
   {
     icon: ScanText,
     title: "AI-assisted pipelines",
-    tone: "bg-violet-500/10 text-violet-600 ring-violet-500/20 dark:text-violet-400",
+    tone: "bg-secondary text-foreground ring-border",
     text: "OCR and LLM extraction wrapped in deterministic validation, so model output never overrides source data.",
   },
 ];

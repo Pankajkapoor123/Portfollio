@@ -1,8 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "next-themes";
 import { toast } from "sonner";
-import { ArrowRight, Copy, FileText, Hash, Moon, Sun } from "lucide-react";
+import { ArrowRight, Copy, FileText, Hash } from "lucide-react";
 import {
   CommandDialog,
   CommandEmpty,
@@ -23,7 +22,6 @@ export const useCommandMenu = () => useContext(CommandMenuContext);
 export const CommandMenuProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -90,17 +88,6 @@ export const CommandMenuProvider = ({ children }: { children: ReactNode }) => {
             <CommandItem value="copy email address" onSelect={copyEmail}>
               <Copy className="mr-2 text-muted-foreground" />
               Copy email address
-            </CommandItem>
-            <CommandItem
-              value="toggle theme dark light mode"
-              onSelect={() => run(() => setTheme(resolvedTheme === "dark" ? "light" : "dark"))}
-            >
-              {resolvedTheme === "dark" ? (
-                <Sun className="mr-2 text-muted-foreground" />
-              ) : (
-                <Moon className="mr-2 text-muted-foreground" />
-              )}
-              Switch to {resolvedTheme === "dark" ? "light" : "dark"} theme
             </CommandItem>
             {socials
               .filter((s) => s.href.startsWith("http"))

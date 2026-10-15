@@ -77,19 +77,17 @@ const Contact = () => {
       description="I'm open to new opportunities and full-stack .NET and Angular projects. Email is the fastest way to reach me."
     >
       <Reveal variant="scale">
-        <div className="relative mb-5 overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-brand-violet to-brand-cyan bg-[length:200%_100%] p-8 text-white shadow-[0_30px_60px_-30px_hsl(var(--primary)/0.7)] [animation:gradient-pan_10s_ease-in-out_infinite] md:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/15 blur-2xl" aria-hidden />
-          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-56 w-56 rounded-full bg-white/10 blur-2xl" aria-hidden />
+        <div className="relative mb-5 overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground shadow-[0_30px_60px_-30px_hsl(var(--foreground)/0.5)] md:p-10">
           <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-2xl font-semibold tracking-tight md:text-3xl">Let's build something reliable.</p>
-              <p className="mt-2 max-w-xl text-white/85">
+              <p className="mt-2 max-w-xl text-primary-foreground/75">
                 APIs, Angular frontends and data models — from first schema to production.
               </p>
             </div>
             <a
               href={`mailto:${profile.email}`}
-              className="btn group h-11 shrink-0 bg-white px-5 font-semibold text-primary shadow-lg hover:-translate-y-0.5 hover:bg-white/90"
+              className="btn group h-11 shrink-0 bg-primary-foreground px-5 font-semibold text-primary shadow-lg hover:-translate-y-0.5 hover:bg-primary-foreground/90"
             >
               Email me <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
@@ -99,7 +97,6 @@ const Contact = () => {
       <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr]">
         <Reveal variant="left">
           <div className="card relative isolate flex h-full flex-col overflow-hidden p-6 md:p-8">
-            <div className="blob -right-16 -top-16 -z-10 h-48 w-48 bg-primary/15" aria-hidden />
             <p className="label text-[11px]">Email</p>
             <div className="mt-3 flex flex-wrap items-center gap-3">
               <a href={`mailto:${profile.email}`} className="text-gradient relative break-all text-xl font-semibold tracking-tight md:text-2xl">

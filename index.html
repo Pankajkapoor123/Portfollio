@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     />
     <meta name="author" content="Pankaj Kumar" />
     <meta name="keywords" content="Pankaj Kumar, .NET developer, ASP.NET Core developer, Angular developer, full stack developer India, healthcare software developer" />
-    <meta name="theme-color" content="#090d1a" />
+    <meta name="theme-color" content="#09090b" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -86,17 +86,6 @@
       }
     </script>
 
-    <!-- Apply the saved theme before first paint to avoid a light/dark flash -->
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("theme");
-          var dark = !t || t === "dark" || (t === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
-          document.documentElement.classList.add(dark ? "dark" : "light");
-          document.documentElement.style.colorScheme = dark ? "dark" : "light";
-        } catch (e) {}
-      })();
-    </script>
   </head>
 
   <body>

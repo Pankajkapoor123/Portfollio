@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="shell grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link to="/" className="group inline-flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-brand-violet font-mono text-sm font-semibold text-white shadow-[0_6px_16px_-6px_hsl(var(--primary)/0.7)] transition-transform group-hover:-rotate-6">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary font-mono text-sm font-semibold text-primary-foreground shadow-[0_6px_16px_-6px_hsl(var(--primary)/0.7)] transition-transform group-hover:-rotate-6">
               {profile.initials}
             </span>
             <span className="text-base font-semibold">{profile.name}</span>

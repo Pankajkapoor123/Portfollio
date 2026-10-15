@@ -7,7 +7,7 @@ import TechMarquee from "@/components/TechMarquee";
 import { coreTech, profile, socials, yearsOfExperience } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { scrollToSection } from "@/lib/scroll";
-import { useParallax, useScrollOut } from "@/lib/scrollFx";
+import { useScrollOut } from "@/lib/scrollFx";
 
 const facts = [
   { label: "Role", value: profile.role },
@@ -29,8 +29,7 @@ const Words = ({ text, start, className = "" }: { text: string; start: number; c
 );
 
 const Hero = () => {
-  // Background drifts slower than the page; the headline block lifts and fades as it leaves
-  const blobs = useParallax<HTMLDivElement>({ speed: -0.35 });
+  // The headline block lifts and fades as it leaves
   const intro = useScrollOut<HTMLDivElement>();
 
   const stats: { value: string; label: string; icon: LucideIcon; tone: string; hint?: string }[] = [
@@ -38,26 +37,26 @@ const Hero = () => {
       value: `${yearsOfExperience()}+`,
       label: "Years in production",
       icon: Rocket,
-      tone: "bg-blue-500/10 text-blue-600 ring-blue-500/20 dark:text-blue-400",
+      tone: "bg-secondary text-foreground ring-border",
     },
     {
       value: String(projects.length),
       label: "Systems shipped",
       icon: Layers,
-      tone: "bg-violet-500/10 text-violet-600 ring-violet-500/20 dark:text-violet-400",
+      tone: "bg-secondary text-foreground ring-border",
     },
     {
       value: String(coreTech.length),
       label: "Core technologies",
       icon: Cpu,
-      tone: "bg-cyan-500/10 text-cyan-600 ring-cyan-500/20 dark:text-cyan-400",
+      tone: "bg-secondary text-foreground ring-border",
       hint: coreTech.join(" · "),
     },
     {
       value: "4",
       label: "Industry domains",
       icon: Building2,
-      tone: "bg-emerald-500/10 text-emerald-600 ring-emerald-500/20 dark:text-emerald-400",
+      tone: "bg-secondary text-foreground ring-border",
       hint: "Healthcare · Logistics · Finance · E-commerce",
     },
   ];
@@ -65,11 +64,6 @@ const Hero = () => {
   return (
     <section id="top" className="relative overflow-hidden pb-16 pt-32 md:pb-20 md:pt-40">
       <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
-      <div ref={blobs} className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="blob -left-24 -top-24 h-[22rem] w-[22rem] bg-primary/20 dark:bg-primary/15" />
-        <div className="blob right-[-6rem] top-10 h-[20rem] w-[20rem] bg-brand-violet/20 [animation-delay:-6s] dark:bg-brand-violet/15" />
-        <div className="blob left-1/3 top-64 h-[16rem] w-[16rem] bg-brand-cyan/15 [animation-delay:-12s] dark:bg-brand-cyan/10" />
-      </div>
 
       <div className="shell relative">
         <div ref={intro} className="scroll-out grid gap-12 lg:grid-cols-[1fr_340px] lg:gap-16">

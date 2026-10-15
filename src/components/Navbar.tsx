@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, ChevronRight, Command, Download, Menu, Search, X } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useCommandMenu } from "@/components/CommandMenu";
 import { profile, sections } from "@/data/profile";
 import { scrollToSection } from "@/lib/scroll";
@@ -66,7 +65,7 @@ const Navbar = () => {
     >
       <nav className="shell flex h-16 items-center justify-between gap-4" aria-label="Main">
         <Link to="/" className="group flex items-center gap-2.5" aria-label={`${profile.name} — home`}>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-brand-violet font-mono text-[13px] font-semibold text-white shadow-[0_6px_16px_-6px_hsl(var(--primary)/0.7)] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-mono text-[13px] font-semibold text-primary-foreground shadow-[0_6px_16px_-6px_hsl(var(--primary)/0.7)] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
             {profile.initials}
           </span>
           <span className="text-[15px] font-semibold tracking-tight">{profile.name}</span>
@@ -114,7 +113,6 @@ const Navbar = () => {
           >
             <Search className="h-4 w-4" />
           </button>
-          <ThemeToggle />
           <Link
             to="/#contact"
             onClick={(e) => handleSectionClick(e, "contact")}

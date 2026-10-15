@@ -96,10 +96,6 @@ const ProjectDetail = () => {
             </div>
           )}
           <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
-          <div aria-hidden>
-            <div className="blob -left-24 -top-24 h-80 w-80 bg-primary/20 dark:bg-primary/15" />
-            <div className="blob right-[-5rem] top-16 h-72 w-72 bg-brand-violet/20 [animation-delay:-8s] dark:bg-brand-violet/15" />
-          </div>
           <div className="shell relative">
             <nav aria-label="Breadcrumb" className="font-mono text-xs text-muted-foreground">
               <ol className="flex flex-wrap items-center gap-2">

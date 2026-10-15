@@ -22,37 +22,37 @@ const services = [
     icon: LayoutDashboard,
     title: "Full-stack web applications",
     text: "Business apps on ASP.NET Core and Angular — dashboards, admin portals and role-based access that work on any screen.",
-    tone: "bg-blue-500/10 text-blue-600 ring-blue-500/20 dark:text-blue-400",
+    tone: "bg-secondary text-foreground ring-border",
   },
   {
     icon: Server,
     title: "REST APIs & backends",
     text: "Secure, documented APIs for web and mobile clients, with validation, JWT auth and clean data models.",
-    tone: "bg-violet-500/10 text-violet-600 ring-violet-500/20 dark:text-violet-400",
+    tone: "bg-secondary text-foreground ring-border",
   },
   {
     icon: HeartPulse,
     title: "Healthcare & enterprise systems",
     text: "Patient lifecycle, billing, inventory and multi-level approval workflows, including ABHA-related integrations.",
-    tone: "bg-rose-500/10 text-rose-600 ring-rose-500/20 dark:text-rose-400",
+    tone: "bg-secondary text-foreground ring-border",
   },
   {
     icon: FileSearch,
     title: "AI document processing",
     text: "Turn PDFs and scanned reports into structured, validated data with OCR and LLMs — checked against the source.",
-    tone: "bg-fuchsia-500/10 text-fuchsia-600 ring-fuchsia-500/20 dark:text-fuchsia-400",
+    tone: "bg-secondary text-foreground ring-border",
   },
   {
     icon: Cable,
     title: "Integrations & cloud",
     text: "AWS S3, SQS and CloudFront, SFTP bank-file workflows, payment gateways and third-party APIs.",
-    tone: "bg-amber-500/10 text-amber-600 ring-amber-500/20 dark:text-amber-400",
+    tone: "bg-secondary text-foreground ring-border",
   },
   {
     icon: Gauge,
     title: "Database design & tuning",
     text: "Relational schemas on PostgreSQL and SQL Server, and query tuning where page load times matter.",
-    tone: "bg-cyan-500/10 text-cyan-600 ring-cyan-500/20 dark:text-cyan-400",
+    tone: "bg-secondary text-foreground ring-border",
   },
 ];
 
@@ -99,7 +99,7 @@ const Services = () => (
           />
           {steps.map((step, i) => (
             <li key={step.title} className="stagger-item relative" style={{ ["--i" as string]: i }}>
-              <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-brand-violet text-white shadow-[0_10px_24px_-10px_hsl(var(--primary)/0.8)]">
+              <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_10px_24px_-10px_hsl(var(--primary)/0.8)]">
                 <step.icon className="h-5 w-5" strokeWidth={1.9} />
               </span>
               <h4 className="mt-4 font-semibold">{step.title}</h4>

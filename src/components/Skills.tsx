@@ -6,12 +6,12 @@ import { skillGroups } from "@/data/profile";
 
 // Icon, colour and bento span per skill group, in the same order as `skillGroups`
 const groupStyle = [
-  { icon: Server, tone: "bg-blue-500/10 text-blue-600 ring-blue-500/20 dark:text-blue-400", span: "lg:col-span-2", glow: "from-blue-500/15" },
-  { icon: Layout, tone: "bg-rose-500/10 text-rose-600 ring-rose-500/20 dark:text-rose-400", span: "lg:row-span-2", glow: "from-rose-500/15" },
-  { icon: Database, tone: "bg-cyan-500/10 text-cyan-600 ring-cyan-500/20 dark:text-cyan-400", span: "", glow: "from-cyan-500/15" },
-  { icon: Cloud, tone: "bg-amber-500/10 text-amber-600 ring-amber-500/20 dark:text-amber-400", span: "", glow: "from-amber-500/15" },
-  { icon: Brain, tone: "bg-violet-500/10 text-violet-600 ring-violet-500/20 dark:text-violet-400", span: "lg:col-span-2", glow: "from-violet-500/15" },
-  { icon: Wrench, tone: "bg-emerald-500/10 text-emerald-600 ring-emerald-500/20 dark:text-emerald-400", span: "", glow: "from-emerald-500/15" },
+  { icon: Server, tone: "bg-secondary text-foreground ring-border", span: "lg:col-span-2", glow: "from-foreground/[0.03]" },
+  { icon: Layout, tone: "bg-secondary text-foreground ring-border", span: "lg:row-span-2", glow: "from-foreground/[0.03]" },
+  { icon: Database, tone: "bg-secondary text-foreground ring-border", span: "", glow: "from-foreground/[0.03]" },
+  { icon: Cloud, tone: "bg-secondary text-foreground ring-border", span: "", glow: "from-foreground/[0.03]" },
+  { icon: Brain, tone: "bg-secondary text-foreground ring-border", span: "lg:col-span-2", glow: "from-foreground/[0.03]" },
+  { icon: Wrench, tone: "bg-secondary text-foreground ring-border", span: "", glow: "from-foreground/[0.03]" },
 ];
 
 const Skills = () => (
