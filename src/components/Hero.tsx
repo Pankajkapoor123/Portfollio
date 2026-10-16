@@ -24,7 +24,7 @@ const Hero = () => {
               I'm {profile.name}, {profile.role}
             </span>
             <span aria-hidden>
-              I'm <Typewriter words={titles} className="text-sky-400" />
+              I'm <Typewriter words={titles} className="text-primary" />
             </span>
           </h1>
 
@@ -42,7 +42,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                   title={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-400/25 bg-sky-400/10 text-sky-400 transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-sky-400 hover:text-slate-950"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/25 bg-primary/10 text-primary transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
                 >
                   <s.icon className="h-[18px] w-[18px]" />
                 </a>
@@ -54,14 +54,14 @@ const Hero = () => {
             <Link
               to="/#contact"
               onClick={(e) => scrollToSection("contact") && e.preventDefault()}
-              className="btn h-11 bg-sky-400 px-6 font-semibold text-slate-950 shadow-[0_10px_28px_-10px_theme(colors.sky.400)] hover:-translate-y-0.5 hover:bg-sky-300"
+              className="btn btn-primary h-11 px-6 font-semibold"
             >
               Hire me
             </Link>
             <a
               href={profile.resume}
               download
-              className="btn group h-11 border border-sky-400/60 px-6 text-sky-400 hover:-translate-y-0.5 hover:bg-sky-400/10"
+              className="btn group h-11 border border-primary/60 px-6 text-primary hover:-translate-y-0.5 hover:bg-primary/10"
             >
               <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
               Download CV
@@ -71,7 +71,7 @@ const Hero = () => {
 
         {/* Cut-out portrait standing on the bottom edge, with a soft glow behind it */}
         <div className="relative mx-auto w-full max-w-[440px] animate-fade-up self-end [animation-delay:200ms] lg:max-w-none">
-          <div className="absolute bottom-[12%] left-1/2 h-1/2 w-2/3 -translate-x-1/2 rounded-full bg-sky-400/20 blur-3xl" aria-hidden />
+          <div className="absolute bottom-[12%] left-1/2 h-1/2 w-2/3 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" aria-hidden />
           <img
             src="/profile-cutout.png"
             alt={`Portrait of ${profile.name}`}
@@ -79,16 +79,6 @@ const Hero = () => {
             height={760}
             className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_78%,transparent)] lg:max-h-[88svh] lg:w-auto"
           />
-
-          {profile.available && (
-            <p className="absolute bottom-[14%] left-0 inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-medium shadow-lg backdrop-blur sm:left-[4%]">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
-              </span>
-              Open to work
-            </p>
-          )}
         </div>
       </div>
     </section>

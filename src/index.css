@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 /*
- * Design tokens. Dark-only and monochrome: near-black surfaces, neutral
- * greys and a near-white primary. The "brand" tokens are mid greys used where
- * a gradient needs a second stop.
+ * Design tokens. Dark-only: near-black surfaces, neutral greys and a sky-blue
+ * primary accent. The "brand" tokens are lighter sky and cyan, used where a
+ * gradient needs more stops.
  * All colors are HSL triplets consumed by Tailwind.
  */
 @layer base {
@@ -21,11 +21,11 @@
     --popover: 240 5% 8%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 0 0% 96%;
-    --primary-foreground: 240 6% 8%;
+    --primary: 198 93% 60%;
+    --primary-foreground: 229 84% 5%;
 
-    --brand-violet: 240 5% 72%;
-    --brand-cyan: 240 4% 60%;
+    --brand-violet: 199 95% 74%;
+    --brand-cyan: 188 86% 53%;
 
     --secondary: 240 4% 13%;
     --secondary-foreground: 0 0% 96%;
@@ -43,7 +43,7 @@
 
     --border: 240 4% 17%;
     --input: 240 4% 22%;
-    --ring: 240 5% 70%;
+    --ring: 198 93% 60%;
 
     --radius: 0.75rem;
   }
@@ -163,7 +163,7 @@
     @apply relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg px-4 text-sm font-medium transition-[background-color,color,box-shadow,transform,border-color] duration-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-primary {
-    @apply bg-primary text-primary-foreground shadow-[0_8px_20px_-8px_hsl(var(--foreground)/0.35)] hover:-translate-y-0.5 hover:bg-primary/90;
+    @apply bg-primary text-primary-foreground shadow-[0_10px_28px_-10px_hsl(var(--primary)/0.7)] hover:-translate-y-0.5 hover:bg-primary/90;
   }
   /* Light sweep across primary buttons on hover */
   .btn-primary::after {
@@ -265,7 +265,7 @@
 
   /* Blinking text cursor for <Typewriter /> */
   .caret {
-    @apply ml-1 inline-block h-[0.9em] w-[0.09em] bg-sky-400 align-[-0.08em];
+    @apply ml-1 inline-block h-[0.9em] w-[0.09em] bg-primary align-[-0.08em];
     animation: caret-blink 1s steps(1) infinite;
   }
 

@@ -22,37 +22,37 @@ const services = [
     icon: LayoutDashboard,
     title: "Full-stack web applications",
     text: "Business apps on ASP.NET Core and Angular — dashboards, admin portals and role-based access that work on any screen.",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
   },
   {
     icon: Server,
     title: "REST APIs & backends",
     text: "Secure, documented APIs for web and mobile clients, with validation, JWT auth and clean data models.",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
   },
   {
     icon: HeartPulse,
     title: "Healthcare & enterprise systems",
     text: "Patient lifecycle, billing, inventory and multi-level approval workflows, including ABHA-related integrations.",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
   },
   {
     icon: FileSearch,
     title: "AI document processing",
     text: "Turn PDFs and scanned reports into structured, validated data with OCR and LLMs — checked against the source.",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
   },
   {
     icon: Cable,
     title: "Integrations & cloud",
     text: "AWS S3, SQS and CloudFront, SFTP bank-file workflows, payment gateways and third-party APIs.",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
   },
   {
     icon: Gauge,
     title: "Database design & tuning",
     text: "Relational schemas on PostgreSQL and SQL Server, and query tuning where page load times matter.",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
   },
 ];
 

@@ -7,37 +7,37 @@ const focus = [
   {
     icon: Braces,
     title: "API design",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
     text: "RESTful ASP.NET Core APIs with request validation, centralized error handling, JWT auth and role-based access.",
   },
   {
     icon: LayoutTemplate,
     title: "Angular frontends",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
     text: "Reusable components and services, reactive forms with validation, routing with lazy loading and guards, and HTTP interceptors for JWT auth — all wired to the APIs with RxJS.",
   },
   {
     icon: MonitorSmartphone,
     title: "Responsive design",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
     text: "Mobile-first layouts with Flexbox and CSS Grid that work on phones, tablets and desktops, with clean, accessible forms, tables and dashboards.",
   },
   {
     icon: Database,
     title: "Data modelling",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
     text: "Relational schemas on PostgreSQL and SQL Server with EF Core, plus query tuning where load times matter.",
   },
   {
     icon: HeartPulse,
     title: "Healthcare workflows",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
     text: "Patient lifecycle, billing and ABHA M1–M3 integrations, where record consistency and access control are non-negotiable.",
   },
   {
     icon: ScanText,
     title: "AI-assisted pipelines",
-    tone: "bg-secondary text-foreground ring-border",
+    tone: "bg-primary/10 text-primary ring-primary/25",
     text: "OCR and LLM extraction wrapped in deterministic validation, so model output never overrides source data.",
   },
 ];
