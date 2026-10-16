@@ -15,7 +15,7 @@ const Hero = () => {
     <section id="top" className="relative overflow-hidden pt-28 lg:pt-0">
       <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
 
-      <div className="shell relative grid grid-cols-[minmax(0,1fr)] items-center gap-6 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-8">
+      <div className="shell relative grid grid-cols-[minmax(0,1fr)] items-center gap-6 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
         <div ref={intro} className="scroll-out lg:py-32">
           <p className="animate-fade-up text-lg font-semibold sm:text-xl">Hi, There!</p>
 
@@ -70,14 +70,14 @@ const Hero = () => {
         </div>
 
         {/* Cut-out portrait standing on the bottom edge, with a soft glow behind it */}
-        <div className="relative mx-auto w-full max-w-[440px] animate-fade-up self-end [animation-delay:200ms] lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-[540px] animate-fade-up self-end [animation-delay:200ms] lg:max-w-none">
           <div className="absolute bottom-[12%] left-1/2 h-1/2 w-2/3 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" aria-hidden />
           <img
             src="/profile-cutout.png"
             alt={`Portrait of ${profile.name}`}
             width={760}
             height={760}
-            className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_78%,transparent)] lg:max-h-[88svh] lg:w-auto"
+            className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_78%,transparent)] lg:-ml-[12.5%] lg:max-h-[88svh] lg:w-[125%] lg:max-w-none lg:object-contain lg:object-bottom"
           />
         </div>
       </div>
