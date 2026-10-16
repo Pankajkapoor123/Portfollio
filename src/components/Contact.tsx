@@ -56,7 +56,9 @@ const Contact = () => {
       if (!res.ok || String(data.success) !== "true") throw new Error(data.message || "Send failed");
       toast.success("Message sent!", { description: "Thanks — I'll get back to you soon." });
       setForm(emptyForm);
-    } catch {
+    } catch (err) {
+      // e.g. "This form needs Activation…" until the FormSubmit activation link is clicked
+      console.error("Contact form relay failed:", err);
       openMailClient();
     } finally {
       setSending(false);

@@ -6,8 +6,9 @@ Personal site of Pankaj Kumar, .NET Full Stack Developer. It's a single-page por
 
 ## Features
 
-- Light and dark themes that follow the system setting, with no flash on load
-- `Ctrl/⌘ + K` command menu to jump to sections and projects, copy the email address or switch theme
+- Dark theme with a cut-out portrait hero and colour brand logos in the skills section
+- `Ctrl/⌘ + K` command menu to jump to sections and projects or copy the email address
+- Contact form that delivers to the inbox through FormSubmit, falling back to the visitor's mail client
 - Case-study pages (`/projects/:slug`) with a sticky table of contents and previous/next navigation
 - All content lives in typed data files, so most edits don't touch any components
 - Accessible markup: semantic landmarks, a skip link, visible focus states and `prefers-reduced-motion` support

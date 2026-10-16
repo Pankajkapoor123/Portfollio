@@ -154,6 +154,3 @@ export const skillGroups = [
   { title: "AI & documents", items: ["LLM integration", "OCR", "PDF parsing", "Knowledge-base matching", "Output validation"] },
   { title: "Tooling & integrations", items: ["Git", "Swagger / OpenAPI", "Postman", "ABHA / ABDM", "Payment gateways"] },
 ];
-
-/** The handful of technologies everything else is built on, shown in the hero stats. */
-export const coreTech = ["C# / .NET", "ASP.NET Core", "Angular", "SQL", "AWS"];
