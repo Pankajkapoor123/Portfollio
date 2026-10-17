@@ -97,25 +97,31 @@ const ProjectDetail = () => {
           )}
           <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
           <div className="shell relative">
-            <nav aria-label="Breadcrumb" className="font-mono text-xs text-muted-foreground">
-              <ol className="flex flex-wrap items-center gap-2">
-                <li>
-                  <Link to="/" className="transition-colors hover:text-primary">
-                    home
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li>
-                  <Link to="/#projects" className="transition-colors hover:text-primary">
-                    projects
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li className="text-primary" aria-current="page">
-                  {project.slug}
-                </li>
-              </ol>
-            </nav>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <Link to="/#projects" className="btn btn-outline group h-9 gap-1.5 px-3.5">
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
+                Back to projects
+              </Link>
+              <nav aria-label="Breadcrumb" className="font-mono text-xs text-muted-foreground">
+                <ol className="flex flex-wrap items-center gap-2">
+                  <li>
+                    <Link to="/" className="transition-colors hover:text-primary">
+                      home
+                    </Link>
+                  </li>
+                  <li aria-hidden>/</li>
+                  <li>
+                    <Link to="/#projects" className="transition-colors hover:text-primary">
+                      projects
+                    </Link>
+                  </li>
+                  <li aria-hidden>/</li>
+                  <li className="text-primary" aria-current="page">
+                    {project.slug}
+                  </li>
+                </ol>
+              </nav>
+            </div>
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_340px] lg:gap-16">
               <div className="animate-fade-up">
@@ -295,6 +301,13 @@ const ProjectDetail = () => {
                 <span className="mt-1.5 block font-semibold transition-colors group-hover:text-primary">{next.title}</span>
               </Link>
             </nav>
+
+            <div className="-mt-10 flex justify-center">
+              <Link to="/#projects" className="btn btn-outline group h-11 px-5">
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
+                Back to all projects
+              </Link>
+            </div>
           </div>
         </div>
       </main>

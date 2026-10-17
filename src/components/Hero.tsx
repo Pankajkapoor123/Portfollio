@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
 
       <div className="shell relative grid grid-cols-[minmax(0,1fr)] items-center gap-6 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
-        <div ref={intro} className="scroll-out lg:py-32">
+        <div ref={intro} className="scroll-out lg:pb-24 lg:pt-44">
           <p className="animate-fade-up text-lg font-semibold sm:text-xl">Hi, There!</p>
 
           <h1 className="mt-3 animate-fade-up whitespace-nowrap text-[8.4vw] font-bold leading-[1.1] tracking-[-0.03em] [animation-delay:80ms] sm:text-[3.4rem] lg:text-[4.3vw] xl:text-[3.4rem]">
@@ -28,12 +28,12 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-muted-foreground [animation-delay:160ms] sm:text-lg">
+          <p className="mt-5 max-w-[34rem] animate-fade-up text-sm leading-relaxed text-muted-foreground [animation-delay:160ms] sm:text-[15px]">
             {profile.role} with {yearsOfExperience()}+ years of building production systems — ASP.NET Core APIs,
             Angular frontends and PostgreSQL data models for healthcare, logistics and enterprise teams.
           </p>
 
-          <ul className="mt-7 flex animate-fade-up gap-3 [animation-delay:240ms]" aria-label="Social links">
+          <ul className="mt-5 flex animate-fade-up gap-3 [animation-delay:240ms]" aria-label="Social links">
             {socials.map((s) => (
               <li key={s.label}>
                 <a
@@ -50,7 +50,7 @@ const Hero = () => {
             ))}
           </ul>
 
-          <div className="mt-9 flex animate-fade-up flex-wrap items-center gap-3 [animation-delay:320ms]">
+          <div className="mt-7 flex animate-fade-up flex-wrap items-center gap-3 [animation-delay:320ms]">
             <Link
               to="/#contact"
               onClick={(e) => scrollToSection("contact") && e.preventDefault()}
@@ -77,7 +77,7 @@ const Hero = () => {
             alt={`Portrait of ${profile.name}`}
             width={760}
             height={760}
-            className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_78%,transparent)] lg:-ml-[12.5%] lg:max-h-[88svh] lg:w-[125%] lg:max-w-none lg:object-contain lg:object-bottom"
+            className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_78%,transparent)] lg:ml-auto lg:h-[88svh] lg:w-[88svh] lg:max-w-none lg:object-contain lg:object-bottom"
           />
         </div>
       </div>

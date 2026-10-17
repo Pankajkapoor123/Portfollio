@@ -72,8 +72,8 @@ export const experience: Experience[] = [
         text: "Built responsive Angular frontends for HIMS and Authentiko: reusable components, reactive forms with validation, route guards, and HTTP interceptors for JWT auth, integrated with the .NET APIs through RxJS.",
       },
       {
-        title: "SNEVVA medical report analysis",
-        text: "Designed the SNEVVA report-processing pipeline: PDF/OCR extraction, knowledge-base matching, reference-range validation and AI fallback for uncertain values, on AWS S3, CloudFront and SQS.",
+        title: "SNEVVA report analysis & AI chatbot",
+        text: "Designed the SNEVVA report-processing pipeline: PDF/OCR extraction, knowledge-base matching, reference-range validation and AI fallback for uncertain values, on AWS S3, CloudFront and SQS. Also implemented the AI chatbot, with a separate chat session for each screen.",
         project: "snevva",
       },
       {

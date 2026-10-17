@@ -132,9 +132,9 @@ export const projects: Project[] = [
     summary:
       "An everyday wellness companion on Google Play: mood, sleep, steps, diet, period and vitals tracking, an AI health companion named Elly, meditation, and AI analysis of lab reports with personalised diet and exercise plans and report-to-report comparison.",
     highlights: [
-      "Daily tracking: mood, sleep, steps, water, diet and periods",
-      "Blood glucose, blood pressure and heart rate with Health Connect sync",
+      "Daily tracking: mood, sleep, steps, diet, periods and vitals",
       "AI report analysis with diet & exercise plans and report comparison",
+      "AI chatbot with a separate chat session for each screen",
     ],
     tech: [".NET 8", "ASP.NET Core Web API", "EF Core", "PostgreSQL", "pgvector", "OCR", "LLM", "AWS", "Android", "Health Connect"],
     icon: Bot,
@@ -144,7 +144,7 @@ export const projects: Project[] = [
       { label: "Platform", value: "Android · Google Play" },
       { label: "Backend", value: ".NET 8 Web API" },
       { label: "Database", value: "PostgreSQL + pgvector" },
-      { label: "My scope", value: "Medical report analysis" },
+      { label: "My scope", value: "Report analysis · AI chatbot" },
     ],
     overview:
       "SNEVVA helps people build healthier daily habits and stay on top of their wellbeing from one calm, easy-to-use app. It brings together habit tracking, vitals monitoring for diabetes and blood pressure, women's health, diet plans, meditation and an AI health companion — and it can read uploaded lab reports, turn them into clear, validated health insights, build diet and exercise plans from the results, and compare reports over time.",
@@ -162,6 +162,8 @@ export const projects: Project[] = [
         title: "Elly — AI Health Companion",
         points: [
           "In-app chat with Elly, the app's friendly health companion",
+          "Chat available on different screens, each with its own separate session",
+          "Every session keeps its own history and context, so conversations never mix",
           "Profile-aware answers backed by knowledge-base retrieval",
           "Date-wise symptom history that can be looked up later",
         ],
@@ -238,7 +240,7 @@ export const projects: Project[] = [
         ],
       },
     ],
-    role: "I built the medical report analysis feature end to end on the .NET backend — the part of SNEVVA that reads a user's uploaded lab report and turns it into structured, trustworthy results. The engineering focus was database-first extraction, selective AI fallback and deterministic validation, so AI output never replaces the values printed on the original report.",
+    role: "I built the medical report analysis feature end to end on the .NET backend — the part of SNEVVA that reads a user's uploaded lab report and turns it into structured, trustworthy results — and implemented the AI chatbot, where each screen runs its own chat session. The engineering focus was database-first extraction, selective AI fallback and deterministic validation, so AI output never replaces the values printed on the original report.",
     roleDetails: [
       "Report intake API: accepts PDF and image uploads with validation, stored on AWS S3 and processed asynchronously through SQS",
       "Extraction: PDF text and table parsing across all pages, with OCR for scanned or photographed reports",
@@ -251,8 +253,10 @@ export const projects: Project[] = [
       "Structured JSON response with results, findings and readable insights for the app",
       "Learning and caching of validated aliases, patterns and reusable responses to cut repeat AI calls",
       "Monitoring of API usage, AI token consumption, knowledge-base hits and processing time",
+      "AI chatbot: chat on multiple screens, each screen opening its own separate session",
+      "Session handling so every chat keeps its own history and context, without mixing conversations across screens",
     ],
-    note: "My work covered the report-analysis feature; the other app features were built by the wider SNEVVA team. Insights are informational and not a clinical diagnosis.",
+    note: "My work covered the report-analysis feature and the AI chatbot; the other app features were built by the wider SNEVVA team. Insights are informational and not a clinical diagnosis.",
   },
   {
     slug: "navitra",
